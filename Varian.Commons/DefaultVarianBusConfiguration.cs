@@ -17,6 +17,7 @@ namespace Varian.Commons
             endpointConfiguration.SendFailedMessagesTo("error");
             endpointConfiguration.AuditProcessedMessagesTo("audit");
             var transport = endpointConfiguration.UseTransport<RabbitMQTransport>();
+            transport.UseDirectRoutingTopology();
             var routing = transport.Routing();
             SetupRouting(routing);
             endpointConfiguration.PurgeOnStartup(System.Diagnostics.Debugger.IsAttached);
@@ -24,7 +25,7 @@ namespace Varian.Commons
                 .DefiningCommandsAs(x => x.Namespace != null && x.Namespace.Contains("Contracts.Commands"))
                 .DefiningEventsAs(x => x.Namespace != null && x.Namespace.Contains("Contracts.Events"))
                 .DefiningMessagesAs(x => x.Namespace != null && x.Namespace.Contains("Contracts.Messages"));
-
+            
         }
 
         
@@ -34,6 +35,9 @@ namespace Varian.Commons
             routing.RouteToEndpoint(typeof(PostRequest).Assembly
                 , "Varian.Contracts.Commands.SubscriberEndpoint"
                 , "Varian.Subscriber");
+            routing.RouteToEndpoint(typeof(PostRequest).Assembly
+                , "Varian.Contracts.Commands.PublisherEndpoint"
+                , "Varian.Publisher");
         }
     }
 }

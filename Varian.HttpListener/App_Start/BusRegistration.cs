@@ -15,6 +15,8 @@ namespace Varian.HttpListener
         {
             var endpointConfiguration = new EndpointConfiguration(typeof(BusRegistration).Namespace);
             endpointConfiguration.DefaultVarianConfiguration();
+            endpointConfiguration.EnableCallbacks();
+            endpointConfiguration.MakeInstanceUniquelyAddressable("discriminator");
             var runningEndpoint = Endpoint
                 .Create(endpointConfiguration)
                 .Result

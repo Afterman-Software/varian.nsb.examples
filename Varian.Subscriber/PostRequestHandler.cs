@@ -8,6 +8,7 @@ namespace Varian.Subscriber
 {
     using Contracts.Commands;
     using Contracts.Commands.SubscriberEndpoint;
+    using Contracts.Messages.SubscriberEndpoint;
     using NServiceBus;
     using NServiceBus.Logging;
 
@@ -22,6 +23,10 @@ namespace Varian.Subscriber
             Log.Info($"handling message...");
             var authToken = context.MessageHeaders["authorization"];
             //call your wcf service here.
+            await context.Reply<PostRequestReply>(x =>
+            {
+                x.IsSuccessful = true;
+            });
             await Task.CompletedTask;
         }
 
