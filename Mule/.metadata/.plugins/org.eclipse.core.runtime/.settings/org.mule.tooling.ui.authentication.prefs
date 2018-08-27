@@ -1,0 +1,5 @@
+authenticated.users=[{"token"\:"96ed9a9d-3c66-4dde-b1fc-3764e4cb38ba","userId"\:"smartindale","refreshToken"\:"","baseUrl"\:"https\://anypoint.mulesoft.com/"}]
+current.token=96ed9a9d-3c66-4dde-b1fc-3764e4cb38ba
+current.user=smartindale
+eclipse.preferences.version=1
+org.mule.tooling.amc.apps={"userProjectMap"\:{"smartindale"\:{"varian_day1"\:"{\\"applicationName\\"\:\\"varianday1\\",\\"muleRuntime\\"\:\\"3.9.1\\",\\"properties\\"\:{}}"}}}

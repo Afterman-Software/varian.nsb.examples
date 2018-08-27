@@ -8,6 +8,7 @@ namespace Varian.Subscriber2
         public void Customize(EndpointConfiguration endpointConfiguration)
         {
             endpointConfiguration.DefaultVarianConfiguration();
+           
         }
     }
 }

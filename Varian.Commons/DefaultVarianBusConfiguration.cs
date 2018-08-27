@@ -25,7 +25,8 @@ namespace Varian.Commons
                 .DefiningCommandsAs(x => x.Namespace != null && x.Namespace.Contains("Contracts.Commands"))
                 .DefiningEventsAs(x => x.Namespace != null && x.Namespace.Contains("Contracts.Events"))
                 .DefiningMessagesAs(x => x.Namespace != null && x.Namespace.Contains("Contracts.Messages"));
-            
+
+
         }
 
         

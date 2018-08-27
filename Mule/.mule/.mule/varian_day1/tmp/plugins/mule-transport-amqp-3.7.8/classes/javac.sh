@@ -1,0 +1,1 @@
+/bin/sh -c cd /scratch/jenkins/workspace/AMQP-Release/mule-transport-amqp && /scratch/jenkins/tools/hudson.model.JDK/Oracle_JDK_6u45/jre/../bin/javac @/scratch/jenkins/workspace/AMQP-Release/mule-transport-amqp/target/classes/org.codehaus.plexus.compiler.javac.JavacCompiler3023613383168772arguments -J-Xmx512m

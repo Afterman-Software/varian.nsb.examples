@@ -19,19 +19,11 @@ namespace Varian.Subscriber
         public async Task Start(IMessageSession session)
         {
             Log.Info("starting up!");
-            //only for temporary testing, send myself the PostRequest command
-            //delete this code later!
-
-
-            //Console.WriteLine("Send??");
-            //Console.ReadLine();
-            //await session.Send<PostPatientRequest>(
-            //    x =>
-            //    {
-            //        x.RequestId = 1;
-            //        x.PatientId = 2;
-            //    });
-
+            
+            //session.ScheduleEvery(TimeSpan.FromDays(1) , x =>
+            //{
+                
+            //})
             await Task.CompletedTask;
         }
 
